@@ -1,0 +1,28 @@
+<div class="repo-title">
+  <h1>{{ repository.name }}</h1>
+</div>
+<div class="repo-info">
+  <span class="forks">
+    {{ repository.forks }}
+  </span>
+  <span class="issues">
+    {{ repository.open_issues }}
+  </span>
+  <span class="stars">
+    {{ repository.stargazers_count }}
+  </span>
+  <span class="watchers">
+    {{ repository.watchers }}
+  </span>
+</div>
+<div class="repo-description">
+  <p>{{ repository.description }}</p>
+  <p>
+    Last commit date: <span>{{ repository.pushed_at }}</span>
+  </p>
+</div>
+<div class="actions">
+  <a [href]="repository.html_url" class="btn btn-link" target="_blank"
+    >Go to repository</a
+  >
+</div>

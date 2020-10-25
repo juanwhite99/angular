@@ -1,0 +1,18 @@
+<form #searchForm="ngForm" class="form-group" (submit)="searchUsername()">
+  <input
+    #searchInput="ngModel"
+    class="form-control"
+    type="text"
+    name="search"
+    placeholder="Type a GitHub username here..."
+    [(ngModel)]="searchText"
+    (input)="userInput.next($event.target.value)"
+    required
+  />
+
+  <button class="btn btn-primary" [disabled]="searchForm.invalid">Search</button>
+</form>
+
+<div class="text-danger">
+  <span *ngIf="searchInput.errors?.required">This field is required</span>
+</div>
